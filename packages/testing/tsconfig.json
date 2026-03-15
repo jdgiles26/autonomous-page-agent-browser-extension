@@ -1,0 +1,18 @@
+{
+	"extends": "../../tsconfig.base.json",
+	"compilerOptions": {
+		"composite": true,
+		"baseUrl": ".",
+		"rootDir": "./src",
+		"outDir": "./dist/esm",
+		"declaration": true,
+		"declarationDir": "./dist/esm",
+		"noEmit": false
+	},
+	"include": ["src/**/*"],
+	"references": [
+		{ "path": "../core" },
+		{ "path": "../page-controller" },
+		{ "path": "../ui" }
+	]
+}

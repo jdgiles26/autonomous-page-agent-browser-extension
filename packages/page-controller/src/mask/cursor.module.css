@@ -1,0 +1,47 @@
+/* AI Cursor Styles - Minimal thin blue indicator */
+.cursor {
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	pointer-events: none;
+	z-index: 10000;
+}
+
+/* Thin blue crosshair indicator */
+.cursor::before,
+.cursor::after {
+	content: '';
+	position: absolute;
+	background: rgb(57, 182, 255);
+}
+
+/* Horizontal line */
+.cursor::before {
+	width: 12px;
+	height: 1px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Vertical line */
+.cursor::after {
+	width: 1px;
+	height: 12px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* Optional: subtle glow on the crosshair intersection */
+.cursor {
+	box-shadow: 0 0 4px rgba(57, 182, 255, 0.5);
+	border-radius: 50%;
+}
+
+/* Hide the old border/filling/ripple layers */
+.cursorBorder,
+.cursorFilling,
+.cursorRipple {
+	display: none;
+}
