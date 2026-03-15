@@ -40,8 +40,8 @@
         "prepare": "husky"
     },
     "devDependencies": {
-        "@commitlint/cli": "^20.4.4",
-        "@commitlint/config-conventional": "^20.4.4",
+        "@commitlint/cli": "^20.5.0",
+        "@commitlint/config-conventional": "^20.5.0",
         "@eslint/js": "^9.39.2",
         "@microsoft/api-extractor": "^7.57.6",
         "@tailwindcss/vite": "^4.2.1",
