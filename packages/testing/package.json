@@ -45,7 +45,7 @@
 		"fuse.js": "^7.0.0",
 		"pixelmatch": "^7.0.0",
 		"pngjs": "^7.0.0",
-		"zod": "^3.23.0"
+		"zod": "^4.3.6"
 	},
 	"peerDependencies": {
 		"@tensorflow/tfjs": "^4.22.0"
