@@ -53,7 +53,7 @@ function spaRoutes() {
 
 // Website Config (React Documentation Site)
 export default defineConfig(({ mode }) => ({
-	base: '/page-agent/',
+	base: '/',
 	clearScreen: false,
 	plugins: [react(), tailwindcss(), spaRoutes()],
 	build: {
