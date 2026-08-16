@@ -9,9 +9,9 @@
 :root {
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);
-	/* 主题色渐变 */
-	--theme-color-1: rgb(88, 192, 252);
-	--theme-color-2: rgb(189, 69, 251);
+	/* 主题色渐变 - updated for rebrand */
+	--theme-color-1: rgb(0, 240, 255); /* electric teal */
+	--theme-color-2: rgb(168, 85, 247); /* purple */
 
 	/* shadcn */
 	--radius: 0.625rem;
@@ -52,15 +52,6 @@ html.dark,
 	--background: #0a0a0a;
 	--foreground: #ededed;
 }
-
-/* 同时支持系统偏好 */
-/* @media (prefers-color-scheme: dark) {
-	html:not(.light),
-	:root:not(.light) {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-} */
 
 /* 添加 Tailwind 自定义颜色 */
 @theme {
@@ -146,17 +137,11 @@ td {
 	color: rgba(255, 255, 255, 0.7);
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose {
-		color: rgba(255, 255, 255, 0.7);
-	}
-} */
-
-.dark .dark\:prose-invert {
+.dark .dark\\:prose-invert {
 	--tw-prose-body: rgba(255, 255, 255, 0.7);
 	--tw-prose-headings: rgba(255, 255, 255, 0.95);
 	--tw-prose-lead: rgba(255, 255, 255, 0.7);
-	--tw-prose-links: rgba(147, 197, 253, 0.9);
+	--tw-prose-links: rgba(45, 212, 191, 0.9);
 	--tw-prose-bold: rgba(255, 255, 255, 0.9);
 	--tw-prose-counters: rgba(255, 255, 255, 0.6);
 	--tw-prose-bullets: rgba(255, 255, 255, 0.5);
@@ -171,27 +156,6 @@ td {
 	--tw-prose-td-borders: rgba(255, 255, 255, 0.2);
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .dark\:prose-invert {
-		--tw-prose-body: rgba(255, 255, 255, 0.7);
-		--tw-prose-headings: rgba(255, 255, 255, 0.95);
-		--tw-prose-lead: rgba(255, 255, 255, 0.7);
-		--tw-prose-links: rgba(147, 197, 253, 0.9);
-		--tw-prose-bold: rgba(255, 255, 255, 0.9);
-		--tw-prose-counters: rgba(255, 255, 255, 0.6);
-		--tw-prose-bullets: rgba(255, 255, 255, 0.5);
-		--tw-prose-hr: rgba(255, 255, 255, 0.2);
-		--tw-prose-quotes: rgba(255, 255, 255, 0.8);
-		--tw-prose-quote-borders: rgba(255, 255, 255, 0.3);
-		--tw-prose-captions: rgba(255, 255, 255, 0.6);
-		--tw-prose-code: rgba(255, 255, 255, 0.9);
-		--tw-prose-pre-code: rgba(255, 255, 255, 0.95);
-		--tw-prose-pre-bg: rgba(0, 0, 0, 0.5);
-		--tw-prose-th-borders: rgba(255, 255, 255, 0.3);
-		--tw-prose-td-borders: rgba(255, 255, 255, 0.2);
-	}
-} */
-
 /* 标题更清晰 */
 .dark .prose h1,
 .dark .prose h2,
@@ -200,69 +164,29 @@ td {
 	color: rgba(255, 255, 255, 0.95);
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose h1,
-	:root:not(.light) .prose h2,
-	:root:not(.light) .prose h3,
-	:root:not(.light) .prose h4 {
-		color: rgba(255, 255, 255, 0.95);
-	}
-} */
-
-/* 链接更清晰 */
+/* 链接更清晰 - teal accent */
 .dark .prose a {
-	color: rgba(147, 197, 253, 0.9);
+	color: rgba(45, 212, 191, 0.9);
 }
-
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose a {
-		color: rgba(147, 197, 253, 0.9);
-	}
-} */
 
 /* 代码块背景更黑 */
 .dark .prose pre {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose pre {
-		background-color: rgba(0, 0, 0, 0.6);
-	}
-} */
-
 /* 表格样式 */
 .dark .prose table {
 	color: rgba(255, 255, 255, 0.7);
 }
-
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose table {
-		color: rgba(255, 255, 255, 0.7);
-	}
-} */
 
 .dark .prose thead {
 	color: rgba(255, 255, 255, 0.9);
 	border-bottom-color: rgba(255, 255, 255, 0.3);
 }
 
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose thead {
-		color: rgba(255, 255, 255, 0.9);
-		border-bottom-color: rgba(255, 255, 255, 0.3);
-	}
-} */
-
 .dark .prose tbody tr {
 	border-bottom-color: rgba(255, 255, 255, 0.2);
 }
-
-/* @media (prefers-color-scheme: dark) {
-	:root:not(.light) .prose tbody tr {
-		border-bottom-color: rgba(255, 255, 255, 0.2);
-	}
-} */
 
 /* 隐藏滚动条，但保持滚动功能 */
 .scrollbar-hide {
