@@ -112,7 +112,6 @@ export default function HeroSection() {
 				<div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[120%] h-[70%] bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.28)_0%,transparent_60%)]" />
 				<div className="absolute top-1/3 -left-20 w-[55%] h-[50%] bg-[radial-gradient(ellipse_at_center,rgba(20,184,166,0.18)_0%,transparent_65%)]" />
 				<div className="absolute bottom-0 right-0 w-[50%] h-[45%] bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.15)_0%,transparent_60%)]" />
-				{/* subtle grid / street texture */}
 				<div
 					className="absolute inset-0 opacity-[0.04]"
 					style={{
@@ -144,7 +143,7 @@ export default function HeroSection() {
 						</AnimatedGradientText>
 					</div>
 
-					{/* Headline — street / neon treatment */}
+					{/* Headline */}
 					<h1
 						id="hero-heading"
 						className="text-4xl sm:text-5xl lg:text-7xl font-black mb-8 sm:mb-12 mt-4 sm:mt-6 leading-[1.1] tracking-tight"
@@ -289,126 +288,155 @@ export default function HeroSection() {
 									)}
 
 									{activeTab === 'other' && (
-										<div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-											{/* 左侧：操作步骤 */}
-											<div className="space-y-3 sm:space-y-4">
-												<div className="bg-teal-500/10 border border-teal-500/20 p-3 sm:p-4 rounded-lg">
-													<p className="text-gray-300 text-sm mb-3">
-														<span className="font-semibold text-teal-300">{isZh ? '步骤 1:' : 'Step 1:'}</span>{' '}
-														{isZh ? '显示收藏夹栏' : 'Show your bookmarks bar'}
-													</p>
-													<div className="flex items-center justify-center gap-2 flex-wrap">
-														<kbd className="px-2 py-1 bg-black/50 border border-white/20 rounded text-xs font-mono text-gray-200">
-															Ctrl + Shift + B
-														</kbd>
-														<span className="text-gray-500">{isZh ? '或' : 'or'}</span>
-														<kbd className="px-2 py-1 bg-black/50 border border-white/20 rounded text-xs font-mono text-gray-200">
-															⌘ + Shift + B
-														</kbd>
-													</div>
-												</div>
-
-												<div className="bg-green-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
-													<p className="text-gray-300 text-sm mb-3">
-														<span className="font-semibold text-green-300">{isZh ? '步骤 2:' : 'Step 2:'}</span>{' '}
-														{isZh ? '拖拽下面按钮到收藏夹栏' : 'Drag this button to your bookmarks'}
-													</p>
-													<div className="flex items-center justify-center gap-3 flex-wrap">
-														<select
-															value={cdnSource}
-															onChange={(e) =>
-																setCdnSource(e.target.value as 'international' | 'china')
-															}
-															className="px-2 py-1.5 text-xs border border-white/20 rounded bg-black/50 text-gray-200"
-														>
-															<option value="international">jsdelivr CDN</option>
-															<option value="china">npmmirror CDN</option>
-														</select>
-														<div
-															dangerouslySetInnerHTML={{
-																__html: getInjection(cdnSource === 'china'),
-															}}
-														></div>
-													</div>
-												</div>
-
-												<div className="bg-purple-500/10 border border-purple-500/20 p-3 sm:p-4 rounded-lg">
-													<p className="text-gray-300 text-sm">
-														<span className="font-semibold text-purple-300">{isZh ? '步骤 3:' : 'Step 3:'}</span>{' '}
-														{isZh
-															? '在其他网站点击收藏夹中的按钮即可使用'
-															: 'Click the bookmark on any site to activate'}
-													</p>
-												</div>
-											</div>
-
-											{/* 右侧：注意事项 */}
-											<div className="bg-yellow-500/10 border border-yellow-500/20 p-3 sm:p-4 rounded-lg">
-												<h4 className="font-semibold text-yellow-200 mb-3 text-sm">
-													{isZh ? '⚠️ 注意' : '⚠️ Heads Up'}
-												</h4>
-												<ul className="space-y-2 text-sm text-gray-300">
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh ? (
-															<span>
-																使用免费测试 LLM API，使用即表示同意
-																<a
-																	href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
-																	target="_blank"
-																	rel="noopener noreferrer"
-																	className="text-yellow-300 underline"
-																>
-																	使用条款
-																</a>
-															</span>
-														) : (
-															<span>
-																Uses free testing LLM API. By using you agree to the{' '}
-																<a
-																	href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
-																	target="_blank"
-																	rel="noopener noreferrer"
-																	className="text-yellow-300 underline"
-																>
-																	Terms of Use
-																</a>
-															</span>
-														)}
+										<div className="space-y-4">
+											{/* Mobile hard limits — always visible */}
+											<div className="bg-red-500/15 border border-red-400/30 p-3 sm:p-4 rounded-lg text-left">
+												<p className="text-red-200 text-sm font-semibold mb-2">
+													{isZh ? '📱 手机限制（请先读）' : '📱 Mobile limits (read first)'}
+												</p>
+												<ul className="space-y-1.5 text-sm text-gray-300">
+													<li className="flex items-start">
+														<span className="text-red-400 mr-2 shrink-0">•</span>
+														<span>
+															<strong className="text-red-200">iPhone Safari / Chrome / Firefox:</strong>{' '}
+															{isZh
+																? 'Apple 禁止 javascript: 书签，无法安装书签小工具。请用本页「立即尝试」，或改用桌面浏览器。'
+																: 'Apple blocks javascript: bookmarks. Bookmarklets cannot run. Use “Try It Now” on this page, or switch to desktop.'}
+														</span>
 													</li>
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh
-															? '数据通过中国大陆服务器处理'
-															: 'Data processed via servers in Mainland China'}
-													</li>
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh
-															? '部分网站屏蔽了链接嵌入，将无反应'
-															: 'Some sites block script injection (CSP policies)'}
-													</li>
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh ? '支持单页应用' : 'Works on single-page apps'}
-													</li>
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh
-															? '仅识别文本，不识别图像，不支持拖拽等复杂交互'
-															: 'Text-only understanding—no image recognition or drag-and-drop'}
-													</li>
-													<li className="flex items-start text-left">
-														<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
-														{isZh ? '详细使用限制参照' : 'Full limitations in'}
-														<Link
-															href="/docs/introduction/limitations"
-															className="text-teal-400 hover:underline pl-1"
-														>
-															{isZh ? '《文档》' : 'Docs'}
-														</Link>
+													<li className="flex items-start">
+														<span className="text-red-400 mr-2 shrink-0">•</span>
+														<span>
+															<strong className="text-red-200">{isZh ? '地址栏不可见：' : 'Address bar is invisible:'}</strong>{' '}
+															{isZh
+																? 'PageAgent 只能操作网页内容，看不到浏览器地址栏。请先自己打开目标网站，再点书签。'
+																: 'PageAgent only sees page content — not the browser URL bar. Open the target site yourself first, then tap the bookmark.'}
+														</span>
 													</li>
 												</ul>
+											</div>
+
+											<div className="grid md:grid-cols-2 gap-4 sm:gap-6">
+												{/* Desktop steps */}
+												<div className="space-y-3 sm:space-y-4">
+													<div className="bg-teal-500/10 border border-teal-500/20 p-3 sm:p-4 rounded-lg">
+														<p className="text-gray-300 text-sm mb-3">
+															<span className="font-semibold text-teal-300">{isZh ? '步骤 1 (桌面):' : 'Step 1 (Desktop):'}</span>{' '}
+															{isZh ? '显示收藏夹栏' : 'Show your bookmarks bar'}
+														</p>
+														<div className="flex items-center justify-center gap-2 flex-wrap">
+															<kbd className="px-2 py-1 bg-black/50 border border-white/20 rounded text-xs font-mono text-gray-200">
+																Ctrl + Shift + B
+															</kbd>
+															<span className="text-gray-500">{isZh ? '或' : 'or'}</span>
+															<kbd className="px-2 py-1 bg-black/50 border border-white/20 rounded text-xs font-mono text-gray-200">
+																⌘ + Shift + B
+															</kbd>
+														</div>
+													</div>
+
+													<div className="bg-green-500/10 border border-green-500/20 p-3 sm:p-4 rounded-lg">
+														<p className="text-gray-300 text-sm mb-3">
+															<span className="font-semibold text-green-300">{isZh ? '步骤 2:' : 'Step 2:'}</span>{' '}
+															{isZh ? '拖拽下面按钮到收藏夹栏' : 'Drag this button to your bookmarks'}
+														</p>
+														<div className="flex items-center justify-center gap-3 flex-wrap">
+															<select
+																value={cdnSource}
+																onChange={(e) =>
+																	setCdnSource(e.target.value as 'international' | 'china')
+																}
+																className="px-2 py-1.5 text-xs border border-white/20 rounded bg-black/50 text-gray-200"
+															>
+																<option value="international">jsdelivr CDN</option>
+																<option value="china">npmmirror CDN</option>
+															</select>
+															<div
+																dangerouslySetInnerHTML={{
+																	__html: getInjection(cdnSource === 'china'),
+																}}
+															></div>
+														</div>
+													</div>
+
+													<div className="bg-purple-500/10 border border-purple-500/20 p-3 sm:p-4 rounded-lg">
+														<p className="text-gray-300 text-sm">
+															<span className="font-semibold text-purple-300">{isZh ? '步骤 3:' : 'Step 3:'}</span>{' '}
+															{isZh
+																? '先打开目标网站，再点收藏夹里的 PageAgent'
+																: 'Open the target site first, then click the PageAgent bookmark'}
+														</p>
+													</div>
+												</div>
+
+												{/* Heads Up */}
+												<div className="bg-yellow-500/10 border border-yellow-500/20 p-3 sm:p-4 rounded-lg">
+													<h4 className="font-semibold text-yellow-200 mb-3 text-sm">
+														{isZh ? '⚠️ 注意' : '⚠️ Heads Up'}
+													</h4>
+													<ul className="space-y-2 text-sm text-gray-300">
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh ? (
+																<span>
+																	使用免费测试 LLM API，使用即表示同意
+																	<a
+																		href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
+																		target="_blank"
+																		rel="noopener noreferrer"
+																		className="text-yellow-300 underline"
+																	>
+																		使用条款
+																	</a>
+																</span>
+															) : (
+																<span>
+																	Uses free testing LLM API. By using you agree to the{' '}
+																	<a
+																		href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
+																		target="_blank"
+																		rel="noopener noreferrer"
+																		className="text-yellow-300 underline"
+																	>
+																		Terms of Use
+																	</a>
+																</span>
+															)}
+														</li>
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh
+																? '数据通过中国大陆服务器处理'
+																: 'Data processed via servers in Mainland China'}
+														</li>
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh
+																? '部分网站屏蔽了脚本注入 (CSP)，将无反应'
+																: 'Some sites block script injection (CSP policies)'}
+														</li>
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh ? '支持单页应用' : 'Works on single-page apps'}
+														</li>
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh
+																? '仅识别文本，不识别图像，不支持拖拽等复杂交互'
+																: 'Text-only understanding—no image recognition or drag-and-drop'}
+														</li>
+														<li className="flex items-start text-left">
+															<span className="w-1.5 h-1.5 bg-yellow-400 rounded-full mt-2 mr-2 shrink-0 "></span>
+															{isZh ? '详细使用限制参照' : 'Full limitations in'}
+															<Link
+																href="/docs/introduction/limitations"
+																className="text-teal-400 hover:underline pl-1"
+															>
+																{isZh ? '《文档》' : 'Docs'}
+															</Link>
+														</li>
+													</ul>
+												</div>
 											</div>
 										</div>
 									)}
