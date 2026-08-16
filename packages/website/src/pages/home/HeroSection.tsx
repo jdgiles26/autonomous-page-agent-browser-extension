@@ -28,7 +28,7 @@ function getInjection(useCN?: boolean) {
 	return `
 	<a
 		href=${injection}
-		class="inline-flex items-center text-xs px-3 py-2 bg-teal-500 text-black font-medium rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-200 cursor-move border-2 border-dashed border-teal-300"
+		class="inline-flex items-center text-xs px-3 py-2 bg-blue-500 text-white font-medium rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-200 cursor-move border-2 border-dashed border-green-300"
 		draggable="true"
 		onclick="return false;"
 		title="Drag me to your bookmarks bar!"
@@ -104,42 +104,42 @@ export default function HeroSection() {
 
 	return (
 		<section
-			className="relative px-6 pt-24 py-20 pb-18 lg:py-22 lg:pt-28 overflow-hidden bg-[#0a0a0a]"
+			className="relative px-6 pt-24 py-20 pb-18 lg:py-22 lg:pt-28 overflow-hidden"
 			aria-labelledby="hero-heading"
 		>
 			<div className="max-w-7xl mx-auto text-center">
 				{/* Background Pattern + Particles */}
-				<div className="absolute inset-0 opacity-40" aria-hidden="true">
-					<div className="absolute inset-0 bg-linear-to-r from-teal-500/20 to-purple-500/20 rounded-3xl transform rotate-1"></div>
-					<div className="absolute inset-0 bg-linear-to-l from-purple-500/20 to-teal-500/20 rounded-3xl transform -rotate-1"></div>
+				<div className="absolute inset-0 opacity-30" aria-hidden="true">
+					<div className="absolute inset-0 bg-linear-to-r from-blue-400/20 to-purple-400/20 rounded-3xl transform rotate-1"></div>
+					<div className="absolute inset-0 bg-linear-to-l from-purple-400/20 to-blue-400/20 rounded-3xl transform -rotate-1"></div>
 				</div>
 				<Particles
 					className="absolute inset-0"
 					quantity={80}
 					staticity={30}
 					ease={80}
-					color="#2dd4bf"
+					color="#6366f1"
 				/>
 
 				<div className="relative z-10">
-					<div className="inline-flex items-center px-4 py-2 mb-8 text-sm font-medium bg-black/80 rounded-full shadow-lg border border-teal-500/40">
+					<div className="inline-flex items-center px-4 py-2 mb-8 text-sm font-medium bg-white/90 dark:bg-gray-800/90 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
 						<span
-							className="w-2 h-2 bg-teal-400 rounded-full mr-2 animate-pulse"
+							className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"
 							aria-hidden="true"
 						></span>
-						<AnimatedGradientText colorFrom="#2dd4bf" colorTo="#a855f7">
-							{isZh ? '让 AI 真正自由' : 'Make AI Free'}
+						<AnimatedGradientText colorFrom="#3b82f6" colorTo="#8b5cf6">
+							AI Agent In Your Webpage
 						</AnimatedGradientText>
 					</div>
 
 					<h1
 						id="hero-heading"
-						className="text-5xl lg:text-7xl font-bold mb-10 mt-6 bg-linear-to-r from-teal-300 via-cyan-300 to-purple-400 bg-clip-text text-transparent pb-1"
+						className="text-5xl lg:text-7xl font-bold mb-14 mt-8 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pb-1"
 					>
 						{isZh ? (
 							<>
 								<span className="text-6xl lg:text-7xl">你网站里的 AI 操作员</span>
-								<span className="block text-xl lg:text-2xl mt-5 font-medium bg-linear-to-r from-teal-300 to-purple-400 bg-clip-text text-transparent">
+								<span className="block text-xl lg:text-2xl mt-5 font-medium bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
 									The AI Operator Living in Your Web Page
 								</span>
 							</>
@@ -152,9 +152,9 @@ export default function HeroSection() {
 						)}
 					</h1>
 
-					<p className="text-xl lg:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-						<Highlighter action="underline" color="#2dd4bf" strokeWidth={2}>
-							<span className="bg-linear-to-r from-teal-400 to-purple-400 bg-clip-text text-transparent font-bold">
+					<p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+						<Highlighter action="underline" color="#8b5cf6" strokeWidth={2}>
+							<span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-bold">
 								{isZh ? '🪄一行代码' : '🪄One line of code'}
 							</span>
 						</Highlighter>
@@ -164,7 +164,7 @@ export default function HeroSection() {
 						<br />
 						{isZh
 							? '用户/答疑机器人给出文字指示，AI 帮你操作页面。'
-							: 'Users give natural language commands, AI handles the rest. No gatekeepers.'}
+							: 'Users give natural language commands, AI handles the rest.'}
 					</p>
 
 					{/* Try It Now Section - Tab Card */}
@@ -173,16 +173,16 @@ export default function HeroSection() {
 							<NeonGradientCard
 								borderSize={2}
 								borderRadius={20}
-								neonColors={{ firstColor: '#2dd4bf', secondColor: '#a855f7' }}
+								neonColors={{ firstColor: '#ff00aa', secondColor: '#00FFF1' }}
 							>
 								{/* Tab Headers */}
-								<div className="flex border-b border-gray-700">
+								<div className="flex border-b border-gray-200 dark:border-gray-700">
 									<button
 										onClick={() => setActiveTab('try')}
 										className={`cursor-pointer flex-1 px-4 py-4 text-lg font-medium transition-colors duration-200 rounded-tl-2xl ${
 											activeTab === 'try'
-												? 'bg-linear-to-r from-teal-900/40 to-purple-900/40 text-teal-300 border-b-2 border-teal-400'
-												: 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+												? 'bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-b-2 border-blue-500'
+												: 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
 										}`}
 									>
 										{isZh ? '🚀 立即尝试' : '🚀 Try It Now'}
@@ -191,8 +191,8 @@ export default function HeroSection() {
 										onClick={() => setActiveTab('other')}
 										className={`cursor-pointer flex-1 px-4 py-4 text-lg font-medium transition-colors duration-200 rounded-tr-2xl ${
 											activeTab === 'other'
-												? 'bg-linear-to-r from-teal-900/40 to-purple-900/40 text-teal-300 border-b-2 border-teal-400'
-												: 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+												? 'bg-linear-to-r from-green-50 to-blue-50 dark:from-green-900/30 dark:to-blue-900/30 text-green-700 dark:text-green-300 border-b-2 border-green-500'
+												: 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
 										}`}
 									>
 										{isZh ? '🌐 其他网页尝试' : '🌐 Try on Other Sites'}
@@ -200,7 +200,7 @@ export default function HeroSection() {
 								</div>
 
 								{/* Tab Content */}
-								<div className="p-4 bg-black/60">
+								<div className="p-4">
 									{activeTab === 'try' && (
 										<div className="space-y-4">
 											<div className="relative">
@@ -212,13 +212,13 @@ export default function HeroSection() {
 															? '输入您想要 AI 执行的任务...'
 															: 'Describe what you want AI to do...'
 													}
-													className="w-full px-4 py-3 pr-20 border border-gray-600 rounded-lg bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-sm mb-0"
+													className="w-full px-4 py-3 pr-20 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm mb-0"
 													data-page-agent-not-interactive
 												/>
 												<button
 													onClick={handleExecute}
 													disabled={!ready}
-													className="absolute right-2 top-2 px-5 py-1.5 bg-linear-to-r from-teal-500 to-purple-600 text-white font-medium rounded-md hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm"
+													className="absolute right-2 top-2 px-5 py-1.5 bg-linear-to-r from-blue-600 to-purple-600 text-white font-medium rounded-md hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm"
 													data-page-agent-not-interactive
 												>
 													{ready ? (
@@ -234,7 +234,7 @@ export default function HeroSection() {
 													)}
 												</button>
 											</div>
-											<p className="text-xs text-gray-500 text-left">
+											<p className="text-xs text-gray-500 dark:text-gray-400 text-left">
 												{isZh ? (
 													<>
 														使用免费测试 LLM API，点击执行即表示您同意
@@ -242,7 +242,7 @@ export default function HeroSection() {
 															href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
 															target="_blank"
 															rel="noopener noreferrer"
-															className="underline text-teal-400"
+															className="underline"
 														>
 															使用条款
 														</a>
@@ -254,7 +254,7 @@ export default function HeroSection() {
 															href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
 															target="_blank"
 															rel="noopener noreferrer"
-															className="underline text-teal-400"
+															className="underline"
 														>
 															Terms of Use
 														</a>
@@ -268,27 +268,27 @@ export default function HeroSection() {
 										<div className="grid md:grid-cols-2 gap-6">
 											{/* 左侧：操作步骤 */}
 											<div className="space-y-4">
-												<div className="bg-teal-950/40 p-4 rounded-lg border border-teal-800/40">
-													<p className="text-gray-300 text-sm mb-3">
-														<span className="font-semibold text-teal-300">{isZh ? '步骤 1:' : 'Step 1:'}</span>{' '}
+												<div className="bg-blue-50 dark:bg-gray-700 p-4 rounded-lg">
+													<p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+														<span className="font-semibold">{isZh ? '步骤 1:' : 'Step 1:'}</span>{' '}
 														{isZh ? '显示收藏夹栏' : 'Show your bookmarks bar'}
 													</p>
 													<div className="flex items-center justify-center gap-2">
-														<kbd className="px-2 py-1 bg-gray-800 border border-gray-600 rounded text-xs font-mono text-gray-200">
+														<kbd className="px-2 py-1 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded text-xs font-mono">
 															Ctrl + Shift + B
 														</kbd>
-														<span className="text-gray-500">
+														<span className="text-gray-500 dark:text-gray-400">
 															{isZh ? '或' : 'or'}
 														</span>
-														<kbd className="px-2 py-1 bg-gray-800 border border-gray-600 rounded text-xs font-mono text-gray-200">
+														<kbd className="px-2 py-1 bg-white dark:bg-gray-600 border border-gray-300 dark:border-gray-500 rounded text-xs font-mono">
 															⌘ + Shift + B
 														</kbd>
 													</div>
 												</div>
 
-												<div className="bg-teal-950/40 p-4 rounded-lg border border-teal-800/40">
-													<p className="text-gray-300 text-sm mb-3">
-														<span className="font-semibold text-teal-300">{isZh ? '步骤 2:' : 'Step 2:'}</span>{' '}
+												<div className="bg-green-50 dark:bg-gray-700 p-4 rounded-lg">
+													<p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
+														<span className="font-semibold">{isZh ? '步骤 2:' : 'Step 2:'}</span>{' '}
 														{isZh ? '拖拽下面按钮到收藏夹栏' : 'Drag this button to your bookmarks'}
 													</p>
 													<div className="flex items-center justify-center gap-3">
@@ -297,7 +297,7 @@ export default function HeroSection() {
 															onChange={(e) =>
 																setCdnSource(e.target.value as 'international' | 'china')
 															}
-															className="px-2 py-1.5 text-xs border border-gray-600 rounded bg-gray-800 text-gray-200"
+															className="px-2 py-1.5 text-xs border border-gray-300 dark:border-gray-500 rounded bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-200"
 														>
 															<option value="international">jsdelivr CDN</option>
 															<option value="china">npmmirror CDN</option>
@@ -310,9 +310,9 @@ export default function HeroSection() {
 													</div>
 												</div>
 
-												<div className="bg-purple-950/40 p-4 rounded-lg border border-purple-800/40">
-													<p className="text-gray-300 text-sm">
-														<span className="font-semibold text-purple-300">{isZh ? '步骤 3:' : 'Step 3:'}</span>{' '}
+												<div className="bg-purple-50 dark:bg-gray-700 p-4 rounded-lg">
+													<p className="text-gray-700 dark:text-gray-300 text-sm">
+														<span className="font-semibold">{isZh ? '步骤 3:' : 'Step 3:'}</span>{' '}
 														{isZh
 															? '在其他网站点击收藏夹中的按钮即可使用'
 															: 'Click the bookmark on any site to activate'}
@@ -321,11 +321,11 @@ export default function HeroSection() {
 											</div>
 
 											{/* 右侧：注意事项 */}
-											<div className="bg-yellow-950/30 p-4 rounded-lg border border-yellow-800/30">
-												<h4 className="font-semibold text-yellow-200 mb-3 text-sm">
+											<div className="bg-yellow-50 dark:bg-gray-700 p-4 rounded-lg">
+												<h4 className="font-semibold text-gray-900 dark:text-white mb-3 text-sm">
 													{isZh ? '⚠️ 注意' : '⚠️ Heads Up'}
 												</h4>
-												<ul className="space-y-2 text-sm text-gray-300">
+												<ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
 													<li className="flex items-start text-left">
 														<span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mt-2 mr-2 shrink-0 "></span>
 														{isZh ? (
@@ -335,7 +335,7 @@ export default function HeroSection() {
 																	href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
 																	target="_blank"
 																	rel="noopener noreferrer"
-																	className="text-yellow-300 underline"
+																	className="text-yellow-700 dark:text-yellow-300 underline"
 																>
 																	使用条款
 																</a>
@@ -347,7 +347,7 @@ export default function HeroSection() {
 																	href="https://github.com/alibaba/page-agent/blob/main/docs/terms-and-privacy.md#2-testing-api-and-demo-disclaimer--terms-of-use"
 																	target="_blank"
 																	rel="noopener noreferrer"
-																	className="text-yellow-300 underline"
+																	className="text-yellow-700 dark:text-yellow-300 underline"
 																>
 																	Terms of Use
 																</a>
@@ -381,7 +381,7 @@ export default function HeroSection() {
 														{isZh ? '详细使用限制参照' : 'Full limitations in'}
 														<Link
 															href="/docs/introduction/limitations"
-															className="text-teal-400 hover:underline pl-1"
+															className="text-blue-600 dark:text-blue-400 hover:underline pl-1"
 														>
 															{isZh ? '《文档》' : 'Docs'}
 														</Link>
@@ -396,23 +396,23 @@ export default function HeroSection() {
 					</div>
 
 					<ul
-						className="flex flex-wrap justify-center gap-6 text-sm text-gray-400"
+						className="flex flex-wrap justify-center gap-6 text-sm text-gray-500 dark:text-gray-400"
 						role="list"
 					>
 						<li className="flex items-center">
-							<span className="w-2 h-2 bg-teal-400 rounded-full mr-2" aria-hidden="true"></span>
+							<span className="w-2 h-2 bg-green-500 rounded-full mr-2" aria-hidden="true"></span>
 							{isZh ? '纯前端方案' : 'Pure Front-end Solution'}
 						</li>
 						<li className="flex items-center">
-							<span className="w-2 h-2 bg-teal-400 rounded-full mr-2" aria-hidden="true"></span>
+							<span className="w-2 h-2 bg-green-500 rounded-full mr-2" aria-hidden="true"></span>
 							{isZh ? '支持私有模型' : 'Your Own Models'}
 						</li>
 						<li className="flex items-center">
-							<span className="w-2 h-2 bg-teal-400 rounded-full mr-2" aria-hidden="true"></span>
+							<span className="w-2 h-2 bg-green-500 rounded-full mr-2" aria-hidden="true"></span>
 							{isZh ? '无痛脱敏' : 'Built-in Privacy'}
 						</li>
 						<li className="flex items-center">
-							<span className="w-2 h-2 bg-teal-400 rounded-full mr-2" aria-hidden="true"></span>
+							<span className="w-2 h-2 bg-green-500 rounded-full mr-2" aria-hidden="true"></span>
 							{isZh ? 'MIT 开源' : 'MIT Open Source'}
 						</li>
 					</ul>
