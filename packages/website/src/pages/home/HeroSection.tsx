@@ -28,7 +28,7 @@ function getInjection(useCN?: boolean) {
 	return `
 	<a
 		href=${injection}
-		class="inline-flex items-center text-xs px-3 py-2 bg-blue-500 text-white font-medium rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-200 cursor-move border-2 border-dashed border-green-300"
+		class="inline-flex items-center text-xs px-3 py-2 bg-teal-500 text-white font-medium rounded-lg hover:shadow-md transform hover:scale-105 transition-all duration-200 cursor-move border-2 border-dashed border-teal-300"
 		draggable="true"
 		onclick="return false;"
 		title="Drag me to your bookmarks bar!"
@@ -110,36 +110,36 @@ export default function HeroSection() {
 			<div className="max-w-7xl mx-auto text-center">
 				{/* Background Pattern + Particles */}
 				<div className="absolute inset-0 opacity-30" aria-hidden="true">
-					<div className="absolute inset-0 bg-linear-to-r from-blue-400/20 to-purple-400/20 rounded-3xl transform rotate-1"></div>
-					<div className="absolute inset-0 bg-linear-to-l from-purple-400/20 to-blue-400/20 rounded-3xl transform -rotate-1"></div>
+					<div className="absolute inset-0 bg-linear-to-r from-teal-400/20 to-purple-400/20 rounded-3xl transform rotate-1"></div>
+					<div className="absolute inset-0 bg-linear-to-l from-purple-400/20 to-teal-400/20 rounded-3xl transform -rotate-1"></div>
 				</div>
 				<Particles
 					className="absolute inset-0"
 					quantity={80}
 					staticity={30}
 					ease={80}
-					color="#6366f1"
+					color="#14b8a6"
 				/>
 
 				<div className="relative z-10">
 					<div className="inline-flex items-center px-4 py-2 mb-8 text-sm font-medium bg-white/90 dark:bg-gray-800/90 rounded-full shadow-lg border border-gray-200 dark:border-gray-700">
 						<span
-							className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse"
+							className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"
 							aria-hidden="true"
 						></span>
-						<AnimatedGradientText colorFrom="#3b82f6" colorTo="#8b5cf6">
-							AI Agent In Your Webpage
+						<AnimatedGradientText colorFrom="#14b8a6" colorTo="#a855f7">
+							Make AI Free
 						</AnimatedGradientText>
 					</div>
 
 					<h1
 						id="hero-heading"
-						className="text-5xl lg:text-7xl font-bold mb-14 mt-8 bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent pb-1"
+						className="text-5xl lg:text-7xl font-bold mb-14 mt-8 bg-linear-to-r from-teal-500 to-purple-600 bg-clip-text text-transparent pb-1"
 					>
 						{isZh ? (
 							<>
 								<span className="text-6xl lg:text-7xl">你网站里的 AI 操作员</span>
-								<span className="block text-xl lg:text-2xl mt-5 font-medium bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+								<span className="block text-xl lg:text-2xl mt-5 font-medium bg-linear-to-r from-teal-400 to-purple-400 bg-clip-text text-transparent">
 									The AI Operator Living in Your Web Page
 								</span>
 							</>
@@ -153,8 +153,8 @@ export default function HeroSection() {
 					</h1>
 
 					<p className="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
-						<Highlighter action="underline" color="#8b5cf6" strokeWidth={2}>
-							<span className="bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent font-bold">
+						<Highlighter action="underline" color="#a855f7" strokeWidth={2}>
+							<span className="bg-linear-to-r from-teal-500 to-purple-500 bg-clip-text text-transparent font-bold">
 								{isZh ? '🪄一行代码' : '🪄One line of code'}
 							</span>
 						</Highlighter>
@@ -164,7 +164,7 @@ export default function HeroSection() {
 						<br />
 						{isZh
 							? '用户/答疑机器人给出文字指示，AI 帮你操作页面。'
-							: 'Users give natural language commands, AI handles the rest.'}
+							: 'Users give natural language commands, AI handles the rest. No gatekeepers.'}
 					</p>
 
 					{/* Try It Now Section - Tab Card */}
@@ -173,7 +173,7 @@ export default function HeroSection() {
 							<NeonGradientCard
 								borderSize={2}
 								borderRadius={20}
-								neonColors={{ firstColor: '#ff00aa', secondColor: '#00FFF1' }}
+								neonColors={{ firstColor: '#14b8a6', secondColor: '#a855f7' }}
 							>
 								{/* Tab Headers */}
 								<div className="flex border-b border-gray-200 dark:border-gray-700">
@@ -181,7 +181,7 @@ export default function HeroSection() {
 										onClick={() => setActiveTab('try')}
 										className={`cursor-pointer flex-1 px-4 py-4 text-lg font-medium transition-colors duration-200 rounded-tl-2xl ${
 											activeTab === 'try'
-												? 'bg-linear-to-r from-blue-50 to-purple-50 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-b-2 border-blue-500'
+												? 'bg-linear-to-r from-teal-50 to-purple-50 dark:from-teal-900/30 dark:to-purple-900/30 text-teal-700 dark:text-teal-300 border-b-2 border-teal-500'
 												: 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
 										}`}
 									>
@@ -191,7 +191,7 @@ export default function HeroSection() {
 										onClick={() => setActiveTab('other')}
 										className={`cursor-pointer flex-1 px-4 py-4 text-lg font-medium transition-colors duration-200 rounded-tr-2xl ${
 											activeTab === 'other'
-												? 'bg-linear-to-r from-green-50 to-blue-50 dark:from-green-900/30 dark:to-blue-900/30 text-green-700 dark:text-green-300 border-b-2 border-green-500'
+												? 'bg-linear-to-r from-green-50 to-teal-50 dark:from-green-900/30 dark:to-teal-900/30 text-green-700 dark:text-green-300 border-b-2 border-green-500'
 												: 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-700'
 										}`}
 									>
@@ -212,13 +212,13 @@ export default function HeroSection() {
 															? '输入您想要 AI 执行的任务...'
 															: 'Describe what you want AI to do...'
 													}
-													className="w-full px-4 py-3 pr-20 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none text-sm mb-0"
+													className="w-full px-4 py-3 pr-20 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none text-sm mb-0"
 													data-page-agent-not-interactive
 												/>
 												<button
 													onClick={handleExecute}
 													disabled={!ready}
-													className="absolute right-2 top-2 px-5 py-1.5 bg-linear-to-r from-blue-600 to-purple-600 text-white font-medium rounded-md hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm"
+													className="absolute right-2 top-2 px-5 py-1.5 bg-linear-to-r from-teal-600 to-purple-600 text-white font-medium rounded-md hover:shadow-md transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-sm"
 													data-page-agent-not-interactive
 												>
 													{ready ? (
@@ -268,7 +268,7 @@ export default function HeroSection() {
 										<div className="grid md:grid-cols-2 gap-6">
 											{/* 左侧：操作步骤 */}
 											<div className="space-y-4">
-												<div className="bg-blue-50 dark:bg-gray-700 p-4 rounded-lg">
+												<div className="bg-teal-50 dark:bg-gray-700 p-4 rounded-lg">
 													<p className="text-gray-700 dark:text-gray-300 text-sm mb-3">
 														<span className="font-semibold">{isZh ? '步骤 1:' : 'Step 1:'}</span>{' '}
 														{isZh ? '显示收藏夹栏' : 'Show your bookmarks bar'}
@@ -381,7 +381,7 @@ export default function HeroSection() {
 														{isZh ? '详细使用限制参照' : 'Full limitations in'}
 														<Link
 															href="/docs/introduction/limitations"
-															className="text-blue-600 dark:text-blue-400 hover:underline pl-1"
+															className="text-teal-600 dark:text-teal-400 hover:underline pl-1"
 														>
 															{isZh ? '《文档》' : 'Docs'}
 														</Link>
